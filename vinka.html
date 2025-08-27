@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>REALCOUNT MENJELANG ULTAH PACAR TERCINTA</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: url("IMG-20250323-WA0042.jpg") no-repeat center center/cover;
+      color: white;
+      text-align: center;
+    }
+    .container {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.8);
+    }
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 30px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+    .countdown {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+    }
+    .time-box {
+      background: rgba(255,255,255,0.15);
+      padding: 20px 30px;
+      border-radius: 15px;
+      font-size: 2rem;
+      font-weight: bold;
+      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    }
+    .label {
+      font-size: 1rem;
+      margin-top: 5px;
+      font-weight: normal;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>REALCOUNT MENJELANG ULTAH PACAR TERCINTA</h1>
+    <div class="countdown">
+      <div>
+        <div id="days" class="time-box">0</div>
+        <div class="label">Hari</div>
+      </div>
+      <div>
+        <div id="hours" class="time-box">0</div>
+        <div class="label">Jam</div>
+      </div>
+      <div>
+        <div id="minutes" class="time-box">0</div>
+        <div class="label">Menit</div>
+      </div>
+      <div>
+        <div id="seconds" class="time-box">0</div>
+        <div class="label">Detik</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Tanggal target ulang tahun
+    const targetDate = new Date("Aug 28, 2025 00:55:00").getTime();
+
+    const countdown = setInterval(function () {
+      const now = new Date().getTime();
+      const distance = targetDate - now;
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById("days").innerText = days;
+      document.getElementById("hours").innerText = hours;
+      document.getElementById("minutes").innerText = minutes;
+      document.getElementById("seconds").innerText = seconds;
+
+      if (distance < 0) {
+        clearInterval(countdown);
+        // Redirect otomatis ke halaman lain
+        window.location.href = "natasya.html"; 
+      }
+    }, 1000);
+  </script>
+</body>
+</html>
